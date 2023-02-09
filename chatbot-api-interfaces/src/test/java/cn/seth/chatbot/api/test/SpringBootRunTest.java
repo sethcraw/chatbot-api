@@ -1,5 +1,6 @@
 package cn.seth.chatbot.api.test;
 
+import cn.seth.chatbot.api.domain.ai.IOpenAIApi;
 import cn.seth.chatbot.api.domain.zsxq.IZsxqApi;
 import cn.seth.chatbot.api.domain.zsxq.model.aggregates.UnAnsweredQuestionAggregates;
 import cn.seth.chatbot.api.domain.zsxq.model.vo.Topics;
@@ -24,12 +25,14 @@ import java.util.List;
 @SpringBootTest
 @Slf4j
 public class SpringBootRunTest {
-    @Resource
-    private IZsxqApi zsxqApi;
     @Value(value = "${chatbot-api.groupId}")
     private String groupId;
     @Value(value = "${chatbot-api.cookie}")
     private String cookie;
+    @Resource
+    private IZsxqApi zsxqApi;
+    @Resource
+    private IOpenAIApi openAIApi;
 
     @Test
     public void test_query_unAnswerQuestion() throws IOException {
@@ -43,5 +46,12 @@ public class SpringBootRunTest {
                 zsxqApi.answer(groupId, cookie, topic.getTopicId(), topic.getTalk().getText());
             }
         }
+    }
+
+    @Test
+    public void test_doChatGPT() throws IOException {
+        String question = "帮我写一个java冒泡排序";
+        String res = openAIApi.doChatGPT(question);
+        log.info("ai 返回结果为:{}", res);
     }
 }
