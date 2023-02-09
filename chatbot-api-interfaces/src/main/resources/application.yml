@@ -4,3 +4,9 @@ server:
 spring:
   application:
     name: chatbot-api-interfaces
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+chatbot-api:
+  groupId: 51112288588224
+  cookie: zsxq_access_token=566B1C1F-AFE3-DA8D-5B91-C32FC21CC888_606409C82CDE18DA; zsxqsessionid=bbb2661e8ac59e4a678313b7148bfdb1; abtest_env=product

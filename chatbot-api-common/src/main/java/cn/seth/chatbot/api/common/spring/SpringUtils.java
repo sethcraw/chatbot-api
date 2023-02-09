@@ -1,4 +1,4 @@
-package cn.seth.chatbot.common.spring;
+package cn.seth.chatbot.api.common.spring;
 
 import cn.hutool.extra.spring.SpringUtil;
 import org.springframework.aop.framework.AopContext;

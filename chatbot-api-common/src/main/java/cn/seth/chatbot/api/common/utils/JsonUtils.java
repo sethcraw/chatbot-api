@@ -1,9 +1,9 @@
-package cn.seth.chatbot.common.utils;
+package cn.seth.chatbot.api.common.utils;
 
 import cn.hutool.core.lang.Dict;
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.ObjectUtil;
-import cn.seth.chatbot.common.spring.SpringUtils;
+import cn.seth.chatbot.api.common.spring.SpringUtils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
