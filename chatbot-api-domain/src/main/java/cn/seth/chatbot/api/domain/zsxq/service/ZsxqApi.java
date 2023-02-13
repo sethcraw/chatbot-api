@@ -34,7 +34,7 @@ public class ZsxqApi implements IZsxqApi {
     @Override
     public UnAnsweredQuestionAggregates queryUnAnsweredQuestions(String groupId, String cookie) throws IOException {
         CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpGet httpGet = new HttpGet("https://api.zsxq.com/v2/groups/"+groupId+"/topics?scope=all&count=20");
+        HttpGet httpGet = new HttpGet("https://api.zsxq.com/v2/groups/"+groupId+"/topics?scope=unanswered_questions&count=20");
         httpGet.setHeader("cookie", cookie);
         httpGet.setHeader("content-type", "application/json; charset=UTF-8");
         CloseableHttpResponse response = null;
@@ -57,9 +57,9 @@ public class ZsxqApi implements IZsxqApi {
     }
 
     @Override
-    public boolean answer(String groupId, String cookie, String topicId, String text) throws IOException {
+    public boolean answer(String groupId, String cookie, String topicId, String text, boolean silenced) throws IOException {
         CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpPost httpPost = new HttpPost("https://api.zsxq.com/v2/topics/"+topicId+"/comments");
+        HttpPost httpPost = new HttpPost("https://api.zsxq.com/v2/topics/"+topicId+"/answer");
         httpPost.addHeader("content-type", "application/json; charset=UTF-8");
         httpPost.setHeader("cookie", cookie);
         httpPost.setHeader("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36");
@@ -75,6 +75,7 @@ public class ZsxqApi implements IZsxqApi {
         try {
             ReqData reqData = ReqData.builder()
                     .text(text)
+                    .silenced(false)
                     .build();
             AnswerReq answerReq = new AnswerReq(reqData);
             httpPost.setEntity(new StringEntity(JsonUtils.toJsonString(answerReq), ContentType.create("text/json", "UTF-8")));

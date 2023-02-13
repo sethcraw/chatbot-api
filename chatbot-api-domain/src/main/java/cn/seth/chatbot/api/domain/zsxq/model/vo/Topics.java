@@ -40,7 +40,9 @@ public class Topics{
      * talk
      * </pre>
      */
-    private Talk	talk;
+//    private Talk	talk;
+
+    private Question	question;
 
     /**
      * <pre>

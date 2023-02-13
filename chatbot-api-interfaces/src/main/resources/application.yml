@@ -9,5 +9,5 @@ spring:
 
 chatbot-api:
   groupId: 51112288588224
-  cookie: zsxq_access_token=566B1C1F-AFE3-DA8D-5B91-C32FC21CC888_606409C82CDE18DA; zsxqsessionid=bbb2661e8ac59e4a678313b7148bfdb1; abtest_env=product
-  openAiKey: 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
+  cookie: zsxq_access_token=566B1C1F-AFE3-DA8D-5B91-C32FC21CC888_606409C82CDE18DA; abtest_env=product; zsxqsessionid=958ed0adfbdfbc2c1d2134bcb8287dbc; sensorsdata2015jssdkcross={"distinct_id":"844142842281522","first_id":"18638fe3707e10-0ef88e26e8c0b88-26021051-921600-18638fe3708e35","props":{"$latest_traffic_source_type":"直接流量","$latest_search_keyword":"未取到值_直接打开","$latest_referrer":""},"identities":"eyIkaWRlbnRpdHlfY29va2llX2lkIjoiMTg2MzhmZTM3MDdlMTAtMGVmODhlMjZlOGMwYjg4LTI2MDIxMDUxLTkyMTYwMC0xODYzOGZlMzcwOGUzNSIsIiRpZGVudGl0eV9sb2dpbl9pZCI6Ijg0NDE0Mjg0MjI4MTUyMiJ9","history_login_id":{"name":"$identity_login_id","value":"844142842281522"},"$device_id":"18638fe3707e10-0ef88e26e8c0b88-26021051-921600-18638fe3708e35"}
+  openAiKey: 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

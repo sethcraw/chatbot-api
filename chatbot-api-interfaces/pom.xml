@@ -33,6 +33,10 @@
             <artifactId>chatbot-api-domain</artifactId>
         </dependency>
         <dependency>
+            <groupId>cn.seth.ai</groupId>
+            <artifactId>chatbot-api-application</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
         </dependency>

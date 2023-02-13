@@ -41,16 +41,16 @@ public class SpringBootRunTest {
         if (unAnsweredQuestionAggregates.isSucceeded()) {
             List<Topics> topics = unAnsweredQuestionAggregates.getRespData().getTopics();
             for (Topics topic : topics) {
-                log.info("topicId:{},问题为:{}", topic.getTopicId(), topic.getTalk().getText());
+                log.info("topicId:{},问题为:{}", topic.getTopicId(), topic.getQuestion().getText());
                 // 回答问题
-                zsxqApi.answer(groupId, cookie, topic.getTopicId(), topic.getTalk().getText());
+                zsxqApi.answer(groupId, cookie, topic.getTopicId(), topic.getQuestion().getText(), false);
             }
         }
     }
 
     @Test
     public void test_doChatGPT() throws IOException {
-        String question = "帮我写一个java冒泡排序";
+        String question = "写个表扬帅哥王晴宇的歌";
         String res = openAIApi.doChatGPT(question);
         log.info("ai 返回结果为:{}", res);
     }

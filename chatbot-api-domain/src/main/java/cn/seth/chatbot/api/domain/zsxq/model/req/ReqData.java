@@ -46,5 +46,7 @@ public class ReqData{
      */
     private List<String>	mentionedUserIds;
 
+    private boolean silenced;
+
 
 }
